@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'Vintage';
+    src: url('../fonts/VINTAGE_COLLEGE_DEPT_worn.otf') format('truetype');
+}
+
+p, tbody {
+    font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
+    text-align: center;
+}
+
+body, body > div > div > table > tbody {
+    text-align: center;
+}
+
+tbody {
+    font-size: 0.9em;
+}
+
+table {
+    margin-bottom: 1%;
+}
+
+h1 {
+    color: #BF7F30;
+    font-size: 3em;
+    font-family: 'Vintage', Calibri, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #7F5520;
+    font-family: 'Vintage', Calibri, sans-serif;
+    letter-spacing: 1px;
+}
+
+body > div > div > table > thead > tr {
+    color: #3F2A10;
+    font-family: "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+button, #menuBtn {
+    background-color: transparent;
+    font-family: "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: solid 2px #7F5520;
+    color: #7F5520;
+    width: 200px!important;
+    height: 50px;
+    border-radius: 10px;
+    margin: 1% 0;
+}
+
+button:hover, #menuBtn:hover {
+    background-color: #7F5520;
+    color: white;
+}
+
+button:focus, #menuBtn:focus {
+    outline: none;
+    background-color: #3F2A10;
+    border-color: #3F2A10;
+}
+
+body > a:nth-child(2) > button:not(.menuBtn), body > a:nth-child(3) > button:not(.menuBtn), body > a:nth-child(4) > button:not(.menuBtn), body > a:nth-child(5) > button:not(.menuBtn), body > a:nth-child(6) > button:not(.menuBtn) {
+    width: 50px!important;
+    height: 40px;
+}
+
+#searchForm > input[type="submit"]:nth-child(9), body > form > input[type="submit"]:nth-child(8), #deleteForm > input[type="submit"]:nth-child(3) {
+    background-color: #BF7F30;
+    font-family: "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif!important;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 80px;
+    height: 30px;
+    border-radius: 7px;
+    margin-left: 2%;
+}
+
+#searchForm > input[type="submit"]:nth-child(9):hover, body > form > input[type="submit"]:nth-child(8):hover, #deleteForm > input[type="submit"]:nth-child(3):hover{
+    background-color: white;
+    color: #BF7F30;
+    border: 1.5px solid #BF7F30;
+}
+
+#searchForm > input[type="submit"]:nth-child(9):focus, body > form > input[type="submit"]:nth-child(8):focus {
+    outline: none;
+    background-color: #BF7F30;
+    color: white;
+}
+
+#searchForm {
+    margin-bottom: 2%;
+}
+
+#searchForm > input[type="text"]:not(.menuBtn), body > form > input[type="text"]:not(.menuBtn) {
+    border: 1.5px solid #BF7F30;
+    height: 28.5px;
+    border-radius: 7px;
+    color: #BF7F30;
+    padding-left: 7px;
+}
+
+#searchForm > input[type="text"]:not(.menuBtn):focus, body > form > input[type="text"]:focus {
+    border-color: #7F5520;
+    outline: none;
+    color: #7F5520;
+}
+
+::placeholder {
+    color: #BF7F30;
+}
