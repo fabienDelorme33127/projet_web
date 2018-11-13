@@ -22,17 +22,27 @@ class HomeController
     private $score;
 
 
+//    public function show(){
+//        $db = new DB();
+//        $db->query('SELECT * FROM film');
+//        $res = $db->result('App\\Entity\\Movie');
+//        $_GET['films']=$res;
+//        return [
+//            'site',
+//            [
+//                'title' => 'BIENVENUE SUR LE SITE DE FILMS',
+//                'text' => 'Ce site vous propose une liste de film à modifier, compléter ou supprimer',
+//                'films' => $res
+//            ]
+//        ];
+//    }
+
     public function show(){
-        $db = new DB();
-        $db->query('SELECT * FROM film');
-        $res = $db->result('App\\Entity\\Movie');
-        $_GET['films']=$res;
         return [
-            'site',
+            'acceuil',
             [
-                'title' => 'BIENVENUE SUR LE SITE DE FILMS',
-                'text' => 'Ce site vous propose une liste de film à modifier, compléter ou supprimer',
-                'films' => $res
+                'title' => 'SELF HEROES',
+                'text' => 'You think its juste un book ... You are not prepared !'
             ]
         ];
     }
