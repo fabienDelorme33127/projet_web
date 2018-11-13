@@ -11,7 +11,7 @@ setlocale(LC_ALL, 'fra');
 define('MYSQL_HOST', 'localhost');
 define('MYSQL_USER', 'root');
 define('MYSQL_PWD', '');
-define('MYSQL_DB', 'SelfHeros');
+define('MYSQL_DB', 'selfheroes');
 
 function autoload($class){
     require 'class/' . str_replace('\\', '/', $class . '.php');

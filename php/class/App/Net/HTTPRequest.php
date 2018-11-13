@@ -107,7 +107,7 @@ class HTTPRequest {
         $this->uri = $_SERVER['REQUEST_URI'];
         $this->uri = str_replace('?' . $_SERVER['QUERY_STRING'], '', $this->uri);
         $this->uri = preg_replace('#.html?#', '', $this->uri);
-        $this->uri = trim(str_replace('/SelfHeros/php/', '', $this->uri), '/');
+        $this->uri = trim(str_replace('/SelfHeroes/php/', '', $this->uri), '/');
         $this->referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
         $this->accept = isset($_SERVER['HTTP_ACCEPT']) ? $_SERVER['HTTP_ACCEPT'] : null;
         $this->contentType = isset($_SERVER['CONTENT_TYPE']) ? $_SERVER['CONTENT_TYPE'] : null;

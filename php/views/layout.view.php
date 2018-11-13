@@ -10,9 +10,9 @@
                 $pageno=strstr($_SERVER['REQUEST_URI'], "pageno");
             }
 
-            if ($_SERVER['REQUEST_URI']=="/SelfHeros/php/" || $pageno != "") {
+            if ($_SERVER['REQUEST_URI']=="/SelfHeroes/php/" || $pageno != "") {
                 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/style.css\">";
-            }else if ($_SERVER['REQUEST_URI']=="/SelfHeros/php/movie/addUpdate" || $_SERVER['REQUEST_URI']=="/SelfHeros/php/movie/delete") {
+            }else if ($_SERVER['REQUEST_URI']=="/SelfHeroes/php/movie/addUpdate" || $_SERVER['REQUEST_URI']=="/SelfHeroes/php/movie/delete") {
                 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/style.css\">";
             }
         ?>

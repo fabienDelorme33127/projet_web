@@ -15,4 +15,4 @@
     <input type="submit">
 </form>
 
-<a href="/SelfHeros/php/"><button class="menuBtn">Revenir au Menu</button></a>
+<a href="/SelfHeroes/php/"><button class="menuBtn">Revenir au Menu</button></a>

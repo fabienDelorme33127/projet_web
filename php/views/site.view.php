@@ -23,8 +23,8 @@ for($i=$offset; $i < $no_of_records_per_page+$offset && $i < $total_rows; $i++){
         <h1><?=$title?></h1>
         <p><?=$text?></p>
 
-        <a href="/SelfHeros/php/movie/addUpdate"><button>Ajouter/Modifier</button></a>
-        <a href="/SelfHeros/php/movie/delete"><button>Supprimer</button></a>
+        <a href="/SelfHeroes/php/movie/addUpdate"><button>Ajouter/Modifier</button></a>
+        <a href="/SelfHeroes/php/movie/delete"><button>Supprimer</button></a>
 
         <form action="" method="post" id="searchForm">
             <h2>RECHERCHER DES FILMS</h2>

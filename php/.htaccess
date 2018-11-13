@@ -3,7 +3,7 @@
 # Si FallbackResource ne marche pas :
 # Activer apache mod rewrite : a2enmod rewrite
 RewriteEngine On
-RewriteBase /SelfHeros/php
+RewriteBase /SelfHeroes/php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* index.php [L]
