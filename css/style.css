@@ -1,6 +1,20 @@
+
+
 @font-face {
     font-family: 'Vintage';
     src: url('../fonts/VINTAGE_COLLEGE_DEPT_worn.otf') format('truetype');
+}
+
+#TopAcceuil {
+    background-image:url(../ressources/SelfHeroes.png);
+    background-repeat:no-repeat;
+    background-size: 100%;
+}
+
+#MidAcceuil {
+    background-image:url(../ressources/livre-ouvert.jpg);
+    background-repeat:no-repeat;
+    background-size: 100%;
 }
 
 p, tbody {
@@ -34,6 +48,10 @@ h2 {
     letter-spacing: 1px;
 }
 
+#logo {
+    width: 5%;
+}
+
 body > div > div > table > thead > tr {
     color: #3F2A10;
     font-family: "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
@@ -41,7 +59,7 @@ body > div > div > table > thead > tr {
     font-size: 0.9em;
 }
 
-button, #menuBtn {
+#menuBtn {
     background-color: transparent;
     font-family: "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
     text-transform: uppercase;
