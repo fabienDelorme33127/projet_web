@@ -14,7 +14,8 @@ class User
     private $id;
     private $login;
     private $password;
-    private $mail;
+    // TODO - Ajouter un attribut typeCompte => admin ou user (il faut aussi ajouter dans la base)
+//    private $mail;
 
     /**
      * Movie.class constructor.
@@ -73,21 +74,21 @@ class User
         $this->password = $password;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getMail()
-    {
-        return $this->mail;
-    }
-
-    /**
-     * @param mixed $mail
-     */
-    public function setMail($mail)
-    {
-        $this->mail = $mail;
-    }
+//    /**
+//     * @return mixed
+//     */
+//    public function getMail()
+//    {
+//        return $this->mail;
+//    }
+//
+//    /**
+//     * @param mixed $mail
+//     */
+//    public function setMail($mail)
+//    {
+//        $this->mail = $mail;
+//    }
 
     public function afficher(){
         $login = $this->getLogin();

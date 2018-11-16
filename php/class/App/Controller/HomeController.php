@@ -12,6 +12,26 @@ use App\Utils\DB;
 
 class HomeController
 {
+    private $id;
+    private $login;
+    private $password;
+
+
+    public function checkParamSignIn(){
+        $this->errors = [];
+
+        if($_POST['login'] === ""){
+            $this->errors['login'] = 'this field is required';
+        } else {
+            $this->login = $_POST['login'];
+        }
+        if($_POST['password'] === ""){
+            $this->errors['password'] = 'this field is required';
+        } else {
+            $this->password = $_POST['password'];
+        }
+    }
+
     public function show(){
         return [
             'acceuil',
@@ -61,21 +81,7 @@ class HomeController
 
     public function signUp(){
 
-//        $this->checkParamUser();
-//        $req = $this->constructParamSearch();
-//
-//        $db = new DB();
-//        $db->query('SELECT * FROM user ' . $req);
-//        $res = $db->result('App\\Entity\\User');
-//        $_GET['user'] = $res;
-//        return [
-//            'site',
-//            [
-//                'title' => 'Bienvenue sur le site de Films',
-//                'text' => 'Ce site vous propose une liste de film à modifier, compléter ou supprimer',
-//                'films' => $res
-//            ]
-//        ];
+
         echo "signUp";
     }
 
@@ -86,30 +92,41 @@ class HomeController
 //        echo '</pre>';
 //        die;
 
-        $errors = [];
-
-        if($_POST['login'] === ""){
-            $errors['login'] = 'Le champs est obligatoire';
-        }
-        if($_POST['password'] === ""){
-            $errors['password'] = 'Le champs est obligatoire';
-        }
-        if(count($errors) > 0){
+        $this->checkParamSignIn();
+        if(count($this->errors) > 0){
             return [
                 'sign_in',
                 [
-                    'errors' => $errors
+                    'errors' => $this->errors
                 ]
             ];
         }
         else {
-            $typeCompte = 'user';
-            if($typeCompte == 'admin'){
-                header('location:/SelfHeroes/php/compteAdmin');
+
+            $db = new DB();
+            $db->query('SELECT * FROM heroes WHERE login LIKE :login AND password LIKE :password');
+            $db->bind(':login', $this->login);
+            $db->bind(':password', $this->password);
+            $res = $db->result('App\\Entity\\User');
+            if($res == null){
+                $this->errors['SQL'] = "Wrong Login or Wrong Password";
+                return [
+                    'sign_in',
+                    [
+                        'errors' => $this->errors
+                    ]
+                ];
+            } else {
+                $_GET['user'] = $res;
+                $typeCompte = 'user';
+                if($typeCompte == 'admin'){
+                    header('location:/SelfHeroes/php/compteAdmin');
+                }
+                else {
+                    header('location:/SelfHeroes/php/compte');
+                }
             }
-            else {
-                header('location:/SelfHeroes/php/compte');
-            }
+
         }
 
     }

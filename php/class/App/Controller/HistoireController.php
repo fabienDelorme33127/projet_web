@@ -14,11 +14,13 @@ class HistoireController
 {
 
     public function showHistoire(){
+        echo $_SERVER['QUERY_STRING'];
+        echo $_GET['histoires'][$_SERVER['QUERY_STRING']];
         return [
             'histoire',
             [
                 'title' => 'Histoire',
-                'text' => 'LOREPSUM'
+                'histoire' => $_GET['histoires'][$_SERVER['QUERY_STRING']]
             ]
         ];
     }

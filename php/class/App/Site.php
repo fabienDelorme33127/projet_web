@@ -35,6 +35,8 @@ class Site
 
         //CompteController
         Router::addRoute(new Route('GET', '/compte', 'Compte', 'showCompteUser'));
+        Router::addRoute(new Route('GET', '/compte/creerHistoire', 'Compte', 'showCreerHistoire'));
+        Router::addRoute(new Route('POST', '/compte/creerHistoire', 'Compte', 'creerHistoire'));
 //        Router::addRoute(new Route('GET', '/compteAdmin', 'Compte', 'showCompteAdmin'));
         Router::addRoute(new Route('GET', '/compte/listeHistoires', 'Compte', 'showListeHistoires'));
         Router::addRoute(new Route('GET', '/compte/mesHistoires', 'Compte', 'showMesHistoires'));
