@@ -24,14 +24,23 @@ class Site
     {
         $this->layout = new Layout('views/layout.view.php');
 
+        //Le router regarde d'abord l'url puis decide de l'envoyer au controler demandé avec l'a    ction choisi
+
+        //HomeController
         Router::addRoute(new Route('GET', '/', 'Home', 'show'));
-        Router::addRoute(new Route('POST', '/', 'Home', 'searchMovie'));
-//        Router::addRoute(new Route('GET', '/movie/search', 'Movie', 'showSearchMovie'));
-//        Router::addRoute(new Route('POST', '/movie/search', 'Movie', 'searchMovie'));
-        Router::addRoute(new Route('GET', '/movie/addUpdate', 'Movie', 'showAddUpdateMovie'));
-        Router::addRoute(new Route('POST', '/movie/addUpdate', 'Movie', 'addUpdateMovie'));
-        Router::addRoute(new Route('GET', '/movie/delete', 'Movie', 'showDeleteMovie'));
-        Router::addRoute(new Route('POST', '/movie/delete', 'Movie', 'deleteMovie'));
+        Router::addRoute(new Route('GET', '/signIn', 'Home', 'showSignIn'));
+        Router::addRoute(new Route('POST', '/signIn', 'Home', 'checkAuth'));
+        Router::addRoute(new Route('GET', '/signUp', 'Home', 'ShowSignUp'));
+        Router::addRoute(new Route('POST', '/signUp', 'Home', 'signUp'));
+
+        //CompteController
+        Router::addRoute(new Route('GET', '/compte', 'Compte', 'showCompteUser'));
+//        Router::addRoute(new Route('GET', '/compteAdmin', 'Compte', 'showCompteAdmin'));
+        Router::addRoute(new Route('GET', '/compte/listeHistoires', 'Compte', 'showListeHistoires'));
+        Router::addRoute(new Route('GET', '/compte/mesHistoires', 'Compte', 'showMesHistoires'));
+
+
+        Router::addRoute(new Route('GET', '/compte/histoire', 'Histoire', 'showHistoire'));
 
         $this->req = new HTTPRequest();
     }
