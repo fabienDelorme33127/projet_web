@@ -17,7 +17,7 @@ class HomeController
     private $password;
 
 
-    public function checkParamSignIn(){
+    public function checkParamSign(){
         $this->errors = [];
 
         if($_POST['login'] === ""){
@@ -81,8 +81,24 @@ class HomeController
 
     public function signUp(){
 
+        $this->checkParamSign();
+        if(count($this->errors) > 0){
+            return [
+                'sign_in',
+                [
+                    'errors' => $this->errors
+                ]
+            ];
+        }
+        else {
+            $db = new DB();
+            $db->query('INSERT INTO heroes (login,password) VALUES (:login, :password);');
+            $db->bind(':login', $this->login);
+            $db->bind(':password', $this->password);
+            $db->execute();
 
-        echo "signUp";
+            $this->checkAuth();
+        }
     }
 
     public function checkAuth(){
@@ -92,7 +108,7 @@ class HomeController
 //        echo '</pre>';
 //        die;
 
-        $this->checkParamSignIn();
+        $this->checkParamSign();
         if(count($this->errors) > 0){
             return [
                 'sign_in',

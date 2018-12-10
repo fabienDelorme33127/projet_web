@@ -18,10 +18,10 @@ class HistoireController
         echo $_SERVER['QUERY_STRING'];
 
         $db = new DB();
-        $db->query('SELECT * FROM histoire h where h.id_histoire=:idHistoire');
+        $db->query('SELECT contenue FROM detail_histoire dh JOIN histoire h ON h.id_histoire=dh.id_histoire where h.id_histoire=:idHistoire and dh.numero_page=:numeroPage');
         $db->bind('idHistoire', $_SERVER['QUERY_STRING']);
         $res = $db->result('App\\Entity\\Histoire');
-        $_SESSION['histoire']=$res;
+        $_SESSION['histoire']=json_decode($res);
         var_dump($_SESSION['histoire']);
         return [
             $_SESSION['histoires']['titre'],

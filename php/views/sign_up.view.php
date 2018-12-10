@@ -1,5 +1,5 @@
 <div class="container">
-    <img src="../ressources/SelfHeroes.png">
+    <img src="../ressources/Selfheroes.png">
     <div class="col-md-10 col-md-offset-1">
 
         <form action="" method="post" id="signup">
