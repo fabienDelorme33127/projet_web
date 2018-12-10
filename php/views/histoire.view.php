@@ -1,5 +1,5 @@
 <?php
-
+$rand = "0";
 ?>
 <div class="container">
     <img src="../ressources/SelfHeroes.png">
@@ -9,15 +9,22 @@
         <p><?=$text?></p>
         <p><?=$_SERVER['QUERY_STRING']?></p>
 
+
+        <form>
+            <input type="submit" name="envoyer" value="envoyer" onclick=<?=$rand=random_int(1,6)?>>
+        </form>
+
         <tbody>
-        <?php
-            echo '<tr>';
-            echo '<td> ' . $histoire->getIdHistoire() . '</td>';
-            echo '<td> ' . $histoire->getTitre() . '</td>';
-            echo '<td> ' . $histoire->getAuteur() . '</td>';
-            echo '<td> ' . $histoire->getDescription() . '</td>';
-            echo '</tr>';
-        ?>
+
+        <form action="" method="post" id="formRand">
+            <input type="text" name="rand" placeholder="rand" value=<?=$rand?>>
+            <?php
+            if(isset($errors['rand'])){
+                echo $errors['rand'];
+            }
+            ?>
+            <input type="submit">
+        </form>
         </tbody>
 
 

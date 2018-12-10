@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Films</title>
+        <title>Self-Hero</title>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
         <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
         <!--<link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -13,7 +13,7 @@
 
 
 
-            if ($_SERVER['REQUEST_URI']=="/SelfHeroes/php/" || $pageno != "") {
+            if ($_SERVER['REQUEST_URI']=="/SelfHeroes/php/") {
                 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/style.css\">";
                 echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>";
                 echo "<script src='../js/menu.js'></script>";
