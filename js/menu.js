@@ -1,6 +1,6 @@
 var Menu = {
     el: {
-        menu: $('.menu'),
+        menu: ('.menu'),
         menuTop: $('.menu-top'),
         menuClose: $('.menu-close'),
         menuMiddle: $('.menu-middle'),
