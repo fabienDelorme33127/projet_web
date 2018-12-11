@@ -11,7 +11,7 @@ namespace App\Entity;
 class User
 {
 
-    private $id;
+    private $id_heroes;
     private $login;
     private $password;
     // TODO - Ajouter un attribut typeCompte => admin ou user (il faut aussi ajouter dans la base)
@@ -29,17 +29,17 @@ class User
     /**
      * @return mixed
      */
-    public function getId()
+    public function getIdHeroes()
     {
-        return $this->id;
+        return $this->id_heroes;
     }
 
     /**
-     * @param mixed $id
+     * @param mixed $id_heroes
      */
-    public function setId($id)
+    public function setIdHeroes($id_heroes)
     {
-        $this->id = $id;
+        $this->id_heroes = $id_heroes;
     }
 
     /**

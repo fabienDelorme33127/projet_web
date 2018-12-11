@@ -7,25 +7,11 @@ $rand = "0";
 
         <h1><?=$title?></h1>
         <p><?=$text?></p>
-        <p><?=$_SERVER['QUERY_STRING']?></p>
 
-
-        <form>
-            <input type="submit" name="envoyer" value="envoyer" onclick=<?=$rand=random_int(1,6)?>>
-        </form>
-
-        <tbody>
-
-        <form action="" method="post" id="formRand">
-            <input type="text" name="rand" placeholder="rand" value=<?=$rand?>>
-            <?php
-            if(isset($errors['rand'])){
-                echo $errors['rand'];
-            }
-            ?>
-            <input type="submit">
-        </form>
-        </tbody>
+        <?php foreach ($bts as $key=>$bt){
+            echo '<a href="/SelfHeroes/php/compte/histoire?idHistoire=' . $idhistoire . '&idPersonnage=' . $_SESSION['idPersonnage'] . '&numeroPage=' . $bt->{'lienbt'} . '"><button class="menuBtn" name="btn' . $bt->{'nombt'} . '">' . $bt->{'nombt'} . '</button></a>';
+        }
+        ?>
 
 
         <a href="/SelfHeroes/php/"><button class="menuBtn">Revenir au Menu</button></a>

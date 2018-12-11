@@ -49,7 +49,6 @@ class HomeController
             [
             ]
         ];
-        echo "signIn";
     }
 
     public function signIn(){
@@ -66,7 +65,6 @@ class HomeController
             [
             ]
         ];
-        echo "signIn";
     }
 
     public function showSignUp(){
@@ -120,7 +118,7 @@ class HomeController
         else {
 
             $db = new DB();
-            $db->query('SELECT * FROM heroes WHERE login LIKE :login AND password LIKE :password');
+            $db->query('SELECT * FROM heroes WHERE login = :login AND password = :password');
             $db->bind(':login', $this->login);
             $db->bind(':password', $this->password);
             $res = $db->result('App\\Entity\\User');
@@ -133,7 +131,7 @@ class HomeController
                     ]
                 ];
             } else {
-                $_GET['user'] = $res;
+                $_SESSION['idUser'] = $res[0]->getIdHeroes();
                 $typeCompte = 'user';
                 if($typeCompte == 'admin'){
                     header('location:/SelfHeroes/php/compteAdmin');

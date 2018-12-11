@@ -43,6 +43,8 @@ class Site
 
 
         Router::addRoute(new Route('GET', '/compte/histoire', 'Histoire', 'showHistoire'));
+        Router::addRoute(new Route('GET', '/compte/createPersonnage/histoire', 'Histoire', 'showCreatePersonnage'));
+        Router::addRoute(new Route('POST', '/compte/createPersonnage/histoire', 'Histoire', 'createPersonnage'));
 
         $this->req = new HTTPRequest();
     }

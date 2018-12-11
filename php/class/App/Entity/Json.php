@@ -8,13 +8,45 @@
 
 namespace App\Entity;
 
-class User
+class Json
 {
 
-    private $numeroPage;
+    private $numero_page;
     private $contenue;
-    // TODO - Ajouter un attribut typeCompte => admin ou user (il faut aussi ajouter dans la base)
-//    private $mail;
+
+    /**
+     * @return mixed
+     */
+    public function getNumeroPage()
+    {
+        return $this->numero_page;
+    }
+
+    /**
+     * @param mixed $numeroPage
+     */
+    public function setNumeroPage($numero_page)
+    {
+        $this->numero_page = $numero_page;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContenue()
+    {
+        return $this->contenue;
+    }
+
+    /**
+     * @param mixed $contenue
+     */
+    public function setContenue($contenue)
+    {
+        $this->contenue = $contenue;
+    }
+
+
 
     /**
      * Movie.class constructor.
@@ -25,80 +57,22 @@ class User
     {
     }
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLogin()
-    {
-        return $this->login;
-    }
-
-    /**
-     * @param mixed $login
-     */
-    public function setLogin($login)
-    {
-        $this->login = $login;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * @param mixed $password
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
-
-//    /**
-//     * @return mixed
-//     */
-//    public function getMail()
-//    {
-//        return $this->mail;
-//    }
-//
-//    /**
-//     * @param mixed $mail
-//     */
-//    public function setMail($mail)
-//    {
-//        $this->mail = $mail;
-//    }
-
     public function afficher(){
-        $login = $this->getLogin();
-        $password = $this->getPassword();
-        echo "<b>$login</b>";
-        echo "Password : $password";
+//        $login = $this->getContenue();
+//        $password = $this->getPassword();
+//        echo "<b>$login</b>";
+//        echo "Password : $password";
     }
 
     public function __toString()
     {
-        return '<b>' . $this->getLogin() . '</b> {' . $this->getPassword() . '}';
+        return '<b>' . $this->getNumeroPage() . '</b> {' . $this->getContenue() . '}';
+    }
+
+    public function toDejson(){
+
+        $json = $this->getContenue();
+        return json_decode($json);
     }
 
 }

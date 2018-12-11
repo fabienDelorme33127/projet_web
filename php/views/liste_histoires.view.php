@@ -8,10 +8,12 @@
 //    $i++;
 //}
 
+
 if(isset($_POST['click'])){
     echo $_POST['click'];
 }
 ?>
+
 <div class="container">
     <img src="../ressources/SelfHeroes.png">
     <div class="col-md-10 col-md-offset-1">
@@ -34,7 +36,7 @@ if(isset($_POST['click'])){
                 echo '<td> ' . $histoire->getTitre() . '</td>';
                 echo '<td> ' . $histoire->getAuteur() . '</td>';
                 echo '<td> ' . $histoire->getDescription() . '</td>';
-                echo '<td><a href="/SelfHeroes/php/compte/histoire?' . $histoire->getIdHistoire() . '"><button class="menuBtn" name="btn' . $key . '">Commencez !</button></a></td>';
+                echo '<td><a href="/SelfHeroes/php/compte/createPersonnage/histoire?idHistoire=' . $histoire->getIdHistoire() . '"><button class="menuBtn" name="btn' . $key . '">Commencez !</button></a></td>';
                 echo '</tr>';
             }
             ?>
